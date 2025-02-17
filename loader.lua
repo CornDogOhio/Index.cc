@@ -1,5 +1,4 @@
 script_key="lnzZGEygipXIbMFcSsitMGWSHnizCtkX";
-
 getgenv().Index = {
     ["Start"] = {
         ["IntroBlur"] = { ['Active'] = true },
