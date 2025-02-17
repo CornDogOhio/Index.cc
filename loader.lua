@@ -1,94 +1,125 @@
 script_key="lnzZGEygipXIbMFcSsitMGWSHnizCtkX";
 getgenv().Index = {
-    ["Start"] = {
-        ["IntroBlur"] = { ['Active'] = true },
-        ["Silent"] = {
-            ['Type'] = 'Target', -- Fov, Target
-            ['ClosestPart'] = false,
-            ['TargetParts'] = 'Head',
-            ['Air'] = 'Head',
-            ['Prediction'] = 0.072,
-            ['Fov'] = {
-                ['Transparency'] = 1,
-                ['Visible'] = false,
-                ['Thickness'] = 1,
-                ['Color'] = Color3.fromRGB(111, 111, 11),
-                ['Radius'] = 200,
+    ['Start'] = {
+        ['Options'] = { 
+            Intro = true,
+            Version = 'V2.3',
+            License = 'keygoeshere', -- [[ luarmor key ]]
+        },
+        ['Silent'] = {
+            Type = 'Target', -- [[ FOV, Target ]]
+            Prediction = 0.072,
+            Hitpart = 'UpperTorso',
+            AirPart = 'Head',
+            ClosestPart = true,
+            NearestPoint = true,
+            NearestPointMode = 'Full', -- [[ Partial, Full ]]
+            AntiAimViewer = true,
+            ['FOV'] = {
+                Transparency = 1,
+                Visible = false,
+                Thickness = 1,
+                Color = Color3.fromRGB(111, 111, 11),
+                Radius = 200,
             },
         },
-        ["TriggerBot"] = {
-            ['Notification'] = false,
-            ['Delay'] = 0.0001,
-            ['Blacklisted'] = { "[Knife]" },
-            ['Keybind'] = 'T',
+        ['SilentOffsets'] = { 
+            Jump = 0, 
+            Fall = 0
         },
-        ["SilentOffsets"] = { ['Jump'] = -0.15, ['Fall'] = 0 },
-        ["AimbotOffsets"] = { ['Active'] = true, ['Jump'] = 4, ['Fall'] = 0.9 },
-        ["AimBot"] = {
-            ['ClosestPart'] = true,
-            ['Notification'] = false,
-            ['Keybind'] = 'C',
-            ['Active'] = true,
-            ['Predictions'] = 0.72,
-            ['Smoothness'] = 1,
-            ['TargetParts'] = 'Head',
+        ['AimbotOffsets'] = { 
+            Enabled = true, 
+            Jump = 1.52, 
+            Fall = 0.12
         },
-        ["Style"] = {
-            ['Easing'] = 'Elastic', -- Linear, Sine, Quad, Cubic, Exponential, Back, Bounce, Elastic
-            ['Direction'] = 'InOut', -- In, Out, InOut
+        ['Aimbot'] = {
+            Enabled = true,
+            Keybind = 'Q',
+            Smoothness = 0.9,
+            Predictions = 0.072,
+            Hitpart = 'Head',
+            ClosestPart = true,
+            Notification = false,
+        },
+        ['Style'] = {
+            Easing = 'Linear', -- [[ Linear, Sine, Quad, Cubic, Exponential, Back, Bounce, Elastic ]]
+            Direction = 'In', -- [[ In, Out, InOut ]]
         },
         ['HitboxExpander'] = {
-            ['Enabled'] = false,
-            ['Visualize'] = false,
-            ['Scaling'] = {
-                ['Enabled'] = false, -- if this is enabled it will automatically disable the normalsize make it into XYZ Size scaling
-                ['X'] = 11,
-                ['Y'] = 1,
-                ['Z'] = 1
+            Enabled = false,
+            Visualize = false,
+            NormalSize = 15,     
+            ['Scaling'] = { -- [[ custom scaling if u dont want to use the same value for each x,y,z ]]
+                Enabled = false, -- [[ if "false" then uses "normalsize" ]]
+                X = 11,
+                Y = 1,
+                Z = 1
             },
-            ['NormalSize'] = 15,     
         },
-        ["MouseTp"] = {
-            ['Active'] = false,
-            ['LerpValues'] = 1,
-            ['MousePredictions'] = 0.1,
+        ['MouseTp'] = {
+            Enabled = true,
+            LerpValues = 0.25,
+            MousePredictions = 0.1,
+        },
+        ['TriggerBot'] = {
+            Enabled = false,
+            Keybind = 'T',
+            Delay = 0.0001, -- [[ this is literally fucking Prediction ]]
+            Notification = true,
+            ['Blacklisted'] = { -- [[ can add any weapon / item to this such as food, katana and other things]]
+                "[Knife]"
+            },
         },
         ["Misc"] = {
+            ['Skyboxes'] = {
+                Enabled = true, -- [[ enable / disable switch is broken currently ]] 
+                SkyboxTexture = 'Minecraft', -- [[ Default, Vaporwave, Redshift, Desert, DaBaby, Minecraft, SpongeBob, Skibidi, Blaze, Pussy Cat, Among Us, Space Wave, Space Wave2, Turquoise Wave, Dark Night, Bright Pink, White Galaxy ]] | credits tsol  my best friend in skidding (temporary till i feel like making a skybox ) 
+            },
+            ['Textures'] = {
+                Enabled = true,
+                Material = 'Rock', -- [[ https://create.roblox.com/docs/reference/engine/enums/Material ]]
+                UseColor = false,
+                Color = Color3.fromRGB(255,255,255),
+            },
             ['Resolver'] = {
-                ['Keybind'] = 'G',
-                ['Active'] = true,
-                ['Notifications'] = false,
-                ['Adjust'] = 0.2,
+                Enabled = true,
+                Keybind = 'G',
+                Method = 'Delta', -- [[ Delta, Recalculate ]]
+                Adjust = 0.2,
+                Notifications = false,
             },
             ['Adjustment'] = {
-                ['VelocityThresold'] = 100,
+                VelocityThresold = 100,
             },
             ['Macro'] = {
-                ['Keybind'] = 'X',
-                ['Active'] = true,
-                ['Acceleration'] = 0.0,
-                ['Variety'] = 'Third', -- First, Third
+                Keybind = 'X',
+                Enabled = true,
+                Acceleration = 0.0,
+                Variety = 'Third', -- First, Third
             },
             ['Spin'] = {
-                ['Keybind'] = 'Z',
-                ['Degrees'] = 360,
-                ['Acceleration'] = 4000,
-                ['Directions'] = 'North',
-                ['Smoothness'] = 1,
+                Keybind = 'V',
+                Degrees = 360,
+                Acceleration = 4900,
+                Directions = 'North',
+                Smoothness = 1,
             },
             ['WalkSpeed'] = {
-                ['Active'] = true,
-                ['Speed'] = 100,
-                ['Keybind'] = 'H' 
+                Enabled = true,
+                Mode = 'Humanoid', -- [[ Humanoid, CFrame ]] [[ cframe is NOT added yet ]]
+                Speed = 100,
+                Keybind = 'H' 
             },
             ['NoJumpCoolDown'] = {
-                ['Active'] = false,
+                Enabled = false,
             },
             ['Checks'] = {
-                ['KO'] = true
+                KO = true,
+                Visible = true,
+                Grabbed = false
             }
         },
     },
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a0ca193dc0855c82f5e849a21f49d320.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xc7b/index/refs/heads/main/loader.lua"))()
